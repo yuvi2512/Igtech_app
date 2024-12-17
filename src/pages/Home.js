@@ -1,5 +1,5 @@
 import React from "react";
-import "./home.css"; // Import your CSS file
+import "./home.css"; 
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
@@ -9,6 +9,9 @@ import InputBase from "@mui/material/InputBase";
 import IconButton from "@mui/material/IconButton";
 import SearchIcon from "@mui/icons-material/Search";
 import Features from "../components/features";
+import Accordion from '../components/Accordion'
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; 
 
 function App() {
   return (
@@ -55,6 +58,8 @@ function App() {
         <div className="container">
           <h2>Tutorials that people love most</h2>
           <div className="tutorial-cards">
+          <Carousel showThumbs={false} infiniteLoop={true} autoPlay={true}>
+            <div>
             <Card sx={{ maxWidth: 345, margin: 2 }}>
               <CardActionArea>
                 <CardMedia
@@ -73,17 +78,19 @@ function App() {
                 </CardContent>
               </CardActionArea>
             </Card>
+            </div>
+            <div>
             <Card sx={{ maxWidth: 345, margin: 2 }}>
               <CardActionArea>
                 <CardMedia
                   component="img"
                   height="80"
                   image="/"
-                  alt="Tutorial 1"
+                  alt="Tutorial 2"
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="div">
-                    ★★★★★
+                    ★★
                   </Typography>
                   <Typography variant="body2" sx={{ color: "text.secondary" }}>
                     Create multiple artboard by using figma
@@ -91,17 +98,19 @@ function App() {
                 </CardContent>
               </CardActionArea>
             </Card>
+            </div>
+            <div>
             <Card sx={{ maxWidth: 345, margin: 2 }}>
               <CardActionArea>
                 <CardMedia
                   component="img"
                   height="80"
                   image="/"
-                  alt="Tutorial 1"
+                  alt="Tutorial 3"
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="div">
-                    ★★★★
+                    ★★★
                   </Typography>
                   <Typography variant="body2" sx={{ color: "text.secondary" }}>
                     Convert your web layout theming easily
@@ -109,10 +118,14 @@ function App() {
                 </CardContent>
               </CardActionArea>
             </Card>
+            </div>
+            </Carousel>
           </div>
+          
         </div>
       </main>
       <Features />
+      <Accordion/>
     </div>
   );
 }

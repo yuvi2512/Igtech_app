@@ -2,7 +2,7 @@ import React from "react";
 import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
-import {Typography,Button} from "@mui/material";
+import {Typography, Button} from "@mui/material";
 import { styled } from "@mui/material/styles";
 
 const StyledCard = styled(Card)(({ theme }) => ({
@@ -12,6 +12,11 @@ const StyledCard = styled(Card)(({ theme }) => ({
   justifyContent: "center",
   height: "200px",
   margin: theme.spacing(2),
+  transition: "transform 0.3s, box-shadow 0.3s", 
+  "&:hover": {
+    transform: "scale(1.05)", 
+    boxShadow: theme.shadows[6], 
+  },
 }));
 
 function Features() {
@@ -25,11 +30,10 @@ function Features() {
 
   return (
     <Grid container spacing={5}>
-      {/* Cards on the left (half screen) */}
       <Grid item xs={12} sm={6}>
         <Grid container spacing={2}>
           <Grid item xs={12} sm={6}>
-            <StyledCard sx={{mt:10}}>
+            <StyledCard sx={{ mt: 10 }}>
               <CardContent>
                 <Typography variant="h3" align="center" color="orange" gutterBottom>
                   80k +
@@ -52,15 +56,10 @@ function Features() {
               </CardContent>
             </StyledCard>
           </Grid>
-          <Grid item xs={12} sm={6} >
-            <StyledCard sx={{mt:10}}>
+          <Grid item xs={12} sm={6}>
+            <StyledCard sx={{ mt: 10 }}>
               <CardContent>
-                <Typography
-                  variant="h3"
-                  align="center"
-                  color="pink"
-                  gutterBottom
-                >
+                <Typography variant="h3" align="center" color="pink" gutterBottom>
                   90+
                 </Typography>
                 <Typography variant="body2" align="center">
@@ -69,19 +68,14 @@ function Features() {
               </CardContent>
             </StyledCard>
           </Grid>
-          <Grid item xs={12} sm={6} >
+          <Grid item xs={12} sm={6}>
             <StyledCard>
               <CardContent>
-                <Typography
-                  variant="h3"
-                  align="center"
-                  color="purple"
-                  gutterBottom
-                >
+                <Typography variant="h3" align="center" color="purple" gutterBottom>
                   & 3M
                 </Typography>
                 <Typography variant="body2" align="center">
-                  Job posted everydays with qualificaitons
+                  Job posted everydays with qualifications
                 </Typography>
               </CardContent>
             </StyledCard>
@@ -94,11 +88,11 @@ function Features() {
           Core Features
         </Typography>
         <Typography variant="body1">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-          vehicula purus at mi aliquet, vel feugiat nisi cursus. Aenean euismod
-          urna eget orci aliquet, sed iaculis neque auctor.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula purus at mi aliquet, vel feugiat nisi cursus. Aenean euismod urna eget orci aliquet, sed iaculis neque auctor.
         </Typography>
-        <Button variant="contained" sx={{mt:10}} color="alert">Explore Details</Button>
+        <Button variant="contained" sx={{ mt: 10 }} color="alert">
+          Explore Details
+        </Button>
       </Grid>
     </Grid>
   );
